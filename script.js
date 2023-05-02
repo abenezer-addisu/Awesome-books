@@ -1,70 +1,69 @@
-// checking if local storage is empty
-
-if (localStorage.getItem('Added Books') == null) {
-  localStorage.setItem('Added Books', JSON.stringify([]));
+class LocalStorageHandler {
+  static getBooks() {
+    if (!localStorage.getItem('Added Books')) {
+      localStorage.setItem('Added Books', JSON.stringify([]));
+    }
+    return JSON.parse(localStorage.getItem('Added Books'));
+  }
+  
+  static updateBooks(books) {
+    localStorage.setItem('Added Books', JSON.stringify(books));
+  }
 }
 
-// Store data into local storage
-
-const storeData = JSON.parse(localStorage.getItem('Added Books'));
-
-function updateData() {
-  localStorage.setItem('Added Books', JSON.stringify(storeData));
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
 }
 
-function createBooks(arr) {
-  let books = '';
-
-  for (let i = 0; i < arr.length; i += 1) {
-    books += ` 
+class UI {
+  static createBooksHTML(arr) {
+    let books = '';
+    for (let i = 0; i < arr.length; i++) {
+      books += ` 
         <p>${arr[i].title}</p>
         <p>${arr[i].author}</p>
-        <button onclick ="removeBook(${i})">Remove</button>
+        <button onclick="UI.removeBook(${i})">Remove</button>
         <hr/>
         `;
+    }
+    return books;
   }
-  return books;
-}
-
-// displaying data t the UI from local storage
-
-function displayBooks() {
-  const listOfBooks = document.querySelector('.container');
-  listOfBooks.innerHTML = `
-    <ul class="book-ul">
-    ${createBooks(storeData)}</ul>
+  
+  static displayBooks() {
+    const listOfBooks = document.querySelector('.container');
+    listOfBooks.innerHTML = `
+      <ul class="book-ul">
+      ${UI.createBooksHTML(LocalStorageHandler.getBooks())}
+      </ul>
     `;
+  }
+  
+  static addNewBook(bookTitle, bookAuthor) {
+    const newBook = new Book(bookTitle, bookAuthor);
+    const books = LocalStorageHandler.getBooks();
+    books.push(newBook);
+    LocalStorageHandler.updateBooks(books);
+    UI.displayBooks();
+  }
+  
+  static removeBook(i) {
+    const books = LocalStorageHandler.getBooks();
+    books.splice(i, 1);
+    LocalStorageHandler.updateBooks(books);
+    UI.displayBooks();
+  }
 }
-
-// adding data inthe local storage
-
-function addNewdata(bookTitle, bookAuthor) {
-  const Book = {
-    title: bookTitle,
-    author: bookAuthor,
-  };
-  storeData.push(Book);
-  updateData();
-  displayBooks();
-}
-
-// Getting values from the input fields
 
 const addBtn = document.querySelector('.add-btn');
-
 addBtn.addEventListener('click', () => {
   const title = document.querySelector('.title');
   const author = document.querySelector('.author');
-  addNewdata(title.value, author.value);
+  UI.addNewBook(title.value, author.value);
 });
 
-// removing data from local storage
-
-function removeBook(i) {
-  storeData.splice(i, 1);
-  updateData();
-  displayBooks();
-}
-removeBook();
-
-window.onload = displayBooks();
+window.addEventListener('load', () => {
+  UI.displayBooks();
+});
