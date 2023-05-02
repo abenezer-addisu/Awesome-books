@@ -13,10 +13,8 @@ body {
 
 hr {
   padding: 0;
-  width: 40%;
-  margin: 0 25% 0 30%;
-
-  /* border-top: 5px; */
+  width: 10%;
+  margin-left: 45%;
   border-top: 3px solid #0a0808;
 }
 
@@ -24,30 +22,6 @@ h1,
 h2 {
   text-align: center;
   padding: 1.5rem 0;
-}
-
-.nav-bar,
-footer {
-  border: 1px solid black;
-  padding: 0.5rem 1rem;
-}
-
-.nav-bar-title {
-  display: flex;
-  align-items: center;
-}
-
-.list-add-contact {
-  display: flex;
-  gap: 0.5rem;
-}
-
-ul {
-  list-style: none;
-}
-
-li {
-  cursor: pointer;
 }
 
 button {
@@ -71,6 +45,11 @@ button {
 
 .book-details {
   display: flex;
+  margin-left: -200px;
+}
+
+.remove-book {
+  padding-top: -300px;
 }
 
 .add-title-and-author {
