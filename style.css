@@ -45,7 +45,7 @@ button {
 
 .book-details {
   display: flex;
-  margin-left: -200px;
+  margin-left: -25px;
 }
 
 .remove-book {
