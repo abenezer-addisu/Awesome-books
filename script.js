@@ -1,24 +1,9 @@
-
-const addedBooks = document.querySelector('.added-books'); // In this div the html wil be created dinamically
-let booksArray = []; // In this array all the new books will be added
-let removeButtonArray = []; // It will contain all the remove buttons
+const addedBooks = document.querySelector('.added-books');
+let booksArray = [];
+let removeButtonArray = [];
 const addButton = document.querySelector('.add-button');
-
-const newTitle = document.querySelector('.add-title'); // User input
-const newAuthor = document.querySelector('.add-author'); // User input
-
-class LocalStorageHandler {
-  static getBooks() {
-    if (!localStorage.getItem('Added Books')) {
-      localStorage.setItem('Added Books', JSON.stringify([]));
-    }
-    return JSON.parse(localStorage.getItem('Added Books'));
-  }
-  
-  static updateBooks(books) {
-    localStorage.setItem('Added Books', JSON.stringify(books));
-  }
-}
+const newTitle = document.querySelector('.add-title');
+const newAuthor = document.querySelector('.add-author');
 
 class Book {
   constructor(title, author) {
@@ -26,7 +11,6 @@ class Book {
     this.author = author;
   }
 
-  
   static addBook() {
     if (newTitle.value !== '' && newAuthor.value !== '') {
       const book = new Book(newTitle.value, newAuthor.value);
@@ -36,24 +20,7 @@ class Book {
       newAuthor.value = '';
     }
   }
-  
-  static displayBooks() {
-    const listOfBooks = document.querySelector('.container');
-    listOfBooks.innerHTML = `
-      <ul class="book-ul">
-      ${UI.createBooksHTML(LocalStorageHandler.getBooks())}
-      </ul>
-    `;
-  }
-  
-  static addNewBook(bookTitle, bookAuthor) {
-    const newBook = new Book(bookTitle, bookAuthor);
-    const books = LocalStorageHandler.getBooks();
-    books.push(newBook);
-    LocalStorageHandler.updateBooks(books);
-    UI.displayBooks();
-  }
-  
+
   static removeBook(index) {
     booksArray.splice(index, 1);
     localStorage.setItem('added-books', JSON.stringify(booksArray));
@@ -84,7 +51,6 @@ class Book {
       });
     }
   }
-
 }
 
 window.addEventListener('load', () => {
@@ -115,18 +81,4 @@ addButton.addEventListener('click', () => {
   }
   Book.render();
   removeButtonArray = document.querySelectorAll('.remove-book');
-});
-
-
-
-
-const addBtn = document.querySelector('.add-btn');
-addBtn.addEventListener('click', () => {
-  const title = document.querySelector('.title');
-  const author = document.querySelector('.author');
-  UI.addNewBook(title.value, author.value);
-});
-
-window.addEventListener('load', () => {
-  UI.displayBooks();
 });
