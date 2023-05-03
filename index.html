@@ -9,25 +9,61 @@
 </head>
 <body>
 
+    <div class="nav-bar">
+        <div class="nav-bar-title">Awesome Books</div>
+        <nav>
+        <ul class="list-add-contact">
+            <li class="nav-list">List</li>
+            <hr>
+            <li class="nav-add">Add New</li>
+            <hr>
+            <li class="nav-contact">Contact</li>
+        </ul>
+        </nav>
+    </div>
+    <button class="bu" type="button" onclick="displayDate()">Date & Time</button>
+    <p id="showDate"></p>
+
+    <!-- first tab ///////////////////////////////////////// -->
+    
     <div class="list">
         <h1>All Awesome Books</h1>
         <div class="added-books"></div>
       </div>
 
       <br>
-      <hr>
-      
-      <div class="add-a-new-book ">
-        <h2>Add a new book</h2>
-        <div class="add-title-and-author">
-          <input class="add-title" type="text" placeholder="Title"/>
-          <input class="add-author" type="text" placeholder="Author"/>
-          <div class="add-button-container">
-            <button type="submit" class="add-button">Add</button>
-          </div>
+     
+
+      <!-- second tab ///////////////////////////////////////// -->
+
+        <div class="add-a-new-book ">
+            <h2>Add a new book</h2>
+            <div class="add-title-and-author">
+            <input class="add-title" type="text" placeholder="Title"/>
+            <input class="add-author" type="text" placeholder="Author"/>
+            <div class="add-button-container">
+                <button type="submit" class="add-button">Add</button>
+            </div>
+            </div>
+            <div class="alert-message"></div>
         </div>
-        <div class="alert-message"></div>
+
+    <!-- third tab ///////////////////////////////////////// -->
+
+    <div class="contact hide">
+        <h2>Contact Information</h2>
+        <p>This is our Contact Us page ,Addis Ababa, Ethiopia.
+          <ul>
+            <li>Our E-mail: Abeenezeraddisu24@gamil.com</li>
+            <li>Our Phone: +2519123456789</li>
+            <li>Our Address Street 322, 84503 , Ethiopia.</li>
+          </ul>
+        </p>
       </div>
+ 
+      <!-- footer -->
+      <footer>Copyright ...</footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
