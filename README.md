@@ -212,7 +212,7 @@ I would also like to thank my coding partner Abenezer Addisu for the support tow
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./MIT.md)(LICENSE) licensed.
+This project is [MIT](./LICENSE) licensed.
 
 
 
