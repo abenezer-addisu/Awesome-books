@@ -44,15 +44,15 @@ footer {
 }
 
 .nav-add {
-  padding:0px 20px 0px 20px;
+  padding: 0 20px 0 20px;
 }
 
 .nav-contact {
-  padding:0px 0px 0px 20px;
+  padding: 0 0 0 20px;
 }
 
 .nav-list {
-  padding:0px 20px 0px 0px;
+  padding: 0 20px 0 0;
 }
 
 ul {
@@ -62,7 +62,6 @@ ul {
 li {
   cursor: pointer;
 }
-
 
 button {
   cursor: pointer;
@@ -111,7 +110,6 @@ button {
   box-sizing: border-box;
 }
 
-
 .alert-message {
   text-align: center;
   color: red;
@@ -146,6 +144,7 @@ footer {
   width: 100%;
   height: 50px;
 }
+
 #showDate {
   text-align: right;
   padding-right: 50px;
