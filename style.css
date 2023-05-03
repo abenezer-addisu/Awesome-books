@@ -6,9 +6,59 @@
 }
 
 body {
+  width: 100%;
   margin: 0 auto;
   background-color: rgb(250, 249, 249);
   color: black;
+}
+
+/* Navbar styling */
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  border: 2px solid black;
+  margin-left: 8rem;
+}
+
+.list-items {
+  display: flex;
+  gap: 5rem;
+  margin-right: 80px;
+}
+
+.list-items li {
+  list-style: none;
+}
+
+.logo a {
+  text-decoration: none;
+  color: grey;
+}
+
+.list-items li a {
+  text-decoration: none;
+  color: gray;
+}
+
+.logo {
+  margin-left: 30px;
+}
+
+.footer-content {
+  width: 80%;
+  border: 2px solid black;
+  margin-left: 8rem;
+  margin-top: 40px;
+}
+
+.footer-content span {
+  margin-left: 30px;
+}
+
+.add-a-new-book {
+  width: 100%;
 }
 
 hr {
@@ -22,6 +72,28 @@ h1,
 h2 {
   text-align: center;
   padding: 1.5rem 0;
+}
+
+.add-a-new-book h2 {
+  font-size: 3rem;
+}
+
+/* contact-page styling */
+.contact {
+  margin-left: 5rem;
+}
+
+.contact p {
+  margin-left: 25rem;
+}
+
+.contact p span {
+  color: orange;
+}
+
+.contact p b {
+  font-size: 25px;
+  padding-bottom: 20rem;
 }
 
 button {
@@ -42,15 +114,11 @@ button {
   padding: 5px;
   margin-bottom: 10px;
   background-color: rgb(231, 229, 229);
- 
 }
 
 .book-details {
   display: flex;
- 
 }
-
-
 
 .add-title-and-author {
   display: flex;
@@ -58,9 +126,15 @@ button {
   margin: 0 auto;
   padding-top: 2rem;
   row-gap: 10px;
-  max-width: 200px;
+  width: 20%;
 }
-.remove-container{
+
+.add-title,
+.add-author {
+  height: 40px;
+}
+
+.remove-container {
   margin-left: 90px;
 }
 
@@ -68,10 +142,9 @@ button {
   text-align: right;
 }
 
-.added-books {
-  border: 3px solid black;
-  width: 95%;
-  margin-left: 5px;
+.add-button {
+  height: 30px;
+  width: 20%;
 }
 
 .main {
@@ -82,7 +155,29 @@ button {
 @media only screen and (min-width: 768px) {
   .added-books {
     border: 3px solid black;
-    width: 60%;
-    margin-left: 20%;
+    width: 90%;
+    margin-left: 60px;
+  }
+
+  .footer-content {
+    width: 90%;
+    margin-left: 60px;
+  }
+
+  .navBar {
+    width: 90%;
+    margin-left: 60px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .navBar {
+    width: 410px;
+    margin-left: 10px;
+    padding-left: -35px;
+  }
+
+  .footer-content {
+    margin-left: 10px;
   }
 }
