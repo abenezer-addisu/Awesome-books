@@ -72,14 +72,15 @@ button {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  max-width: 300px;
   margin: 0 auto;
   padding: 5px;
+  margin-bottom: 10px;
+  background-color: rgb(231, 229, 229);
+ 
 }
 
 .book-details {
   display: flex;
-  margin-left: -25px;
 }
 
 .add-title-and-author {
@@ -89,6 +90,9 @@ button {
   padding-top: 2rem;
   row-gap: 10px;
   max-width: 200px;
+}
+.remove-container{
+  margin-left: 90px;
 }
 
 .add-button-container {
