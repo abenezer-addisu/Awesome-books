@@ -76,7 +76,6 @@ button {
   padding: 5px;
   margin-bottom: 10px;
   background-color: rgb(231, 229, 229);
- 
 }
 
 .book-details {
@@ -91,7 +90,8 @@ button {
   row-gap: 10px;
   max-width: 200px;
 }
-.remove-container{
+
+.remove-container {
   margin-left: 90px;
 }
 
