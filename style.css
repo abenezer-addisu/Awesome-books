@@ -82,10 +82,6 @@ button {
   margin-left: -25px;
 }
 
-.remove-book {
-  padding-top: -300px;
-}
-
 .add-title-and-author {
   display: flex;
   flex-direction: column;
